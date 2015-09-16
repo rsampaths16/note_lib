@@ -1,0 +1,9 @@
+// Math
+template<class Int> Int ceil(Int N,Int D) { return (((N-1)/D)+1); }
+template<class Int> bool odd(Int N) { return (N&1); }
+template<class Int> bool even(Int N) { return !(N&1); }
+template<class Int> Int lg2(Int N) { return (!N ? -1 : (Int(8*sizeof(Int))-ones(N)));}
+template<class Dbl> Dbl cot(Dbl N) { return Dbl(1/tan(N)); }
+template<class Dbl> Dbl sec(Dbl N) { return Dbl(1/cos(N)); }
+template<class Dbl> Dbl csc(Dbl N) { return Dbl(1/sin(N)); }
+template<class Dbl> inline bool EQ(Dbl a, Dbl b) { return fabs(a-b) < 1e-9; }

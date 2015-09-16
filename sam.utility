@@ -1,0 +1,15 @@
+// special
+#define mset(a,val) memset(a,val,sizeof(a))
+#define mcpy(a,b)   memcpy(a,b,sizeof(a))
+#define mcmp(a,b)   memcmp(a,b,sizeof(a))
+#define all(a)  a.begin(),a.end()
+#define rall(a) a.rbegin(),a.rend()
+#define ins(A, P, B) A.insert(A.begin() + P, B)
+#define ers(A, P) A.erase(A.begin() + P)
+#define lbnd(A, x) (lower_bound(all(A), x) - A.begin())
+#define is_in(T, x) (T.find(x) != T.end())
+template<class T> void unq(T &A){A.resize(unique(all(sort(all(A))))-A.begin());}
+
+// Utility
+template<class T> void chmax(T & a, const T & b) { a = max(a, b); }
+template<class T> void chmin(T & a, const T & b) { a = min(a, b); }

@@ -1,0 +1,33 @@
+// Fast I/O :-
+inline void readll(ll &a)
+{
+  register int c;
+  a = 0;
+  do c = getchar_unlocked(); while (c < '0');
+  do{
+    a = (a << 1) + (a << 3) + c - '0';
+    c = getchar_unlocked();
+  } while (c >= '0');
+}
+inline void printll(ll a)
+{
+  int s[25], t = -1;
+  do
+  {
+    s[++t] = a % 10 + '0';
+    a /= 10;
+  } while (a > 0);
+  while (t >= 0)putchar_unlocked(s[t--]);
+  putchar_unlocked('\n');
+}
+inline ll readstr(char s[])
+{
+  register ll i = 0, c;
+  do c = getchar_unlocked(); while (c < '0' || c > '9');
+  do{
+    s[i++] = c;
+    c = getchar_unlocked();
+  } while (c >= '0' && c <= '9');
+  s[i] = '\0';
+  return i;
+}

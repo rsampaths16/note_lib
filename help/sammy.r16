@@ -1,0 +1,76 @@
+/*
+  Coder   : R Sampath Sukesh.
+  Handle  : rsampaths16.
+  Email   : rsampaths16@gmail.com.
+  Country : India.
+*/
+
+/*
+// lib help
+
+#include <vector>
+#include <queue>
+#include <map>
+#include <set>
+#include <bitset>
+#include <list>
+#include <stack>
+#include <string>
+
+#include <iostream>
+#include <sstream> // istringstream >> | ostringstream <<
+#include <iomanip>
+->	setbase - cout << setbase (16); cout << 100 << endl; Prints 64
+->	setfill -   cout << setfill ('x') << setw (5); cout << 77 << endl; prints xxx77
+->	setprecision - cout << setprecision(8) << f << endl; Prints x.xxxx----
+->	setprecision - cout << setprecision(8) <<fixed() << f <<endl; Prints x.xxxx0000
+
+#include <cstdio>
+->	sprintf(char* str,printf)
+->	sscanf(char* str,scanf)
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cstring>
+#include <cctype>
+#include <utility> //Pair
+#include <algorithm>
+#include <limits>
+#include <functional>
+*/
+
+/*
+terminal
+
+vi  ~/.exrc
+:set autoindent
+:set tabstop=4
+:set number #show line number's
+:set autoread #change buffer if changed outside
+:set nowrap #wrap turns off
+:set wrapscan #search's wraping text
+
+
+:%s/old/new    #replace once
+:%s/old/new/g  #replace all
+:%s/old/new/gc #relpace one-by-one by confirming
+/search-string #search string
+Ctrl+n         #Fwd
+Ctrl+N         #Bwd
+w              #word
+e              #end-word
+^              #line-start
+$              #line-end
+gg             #first-line
+n gg           #n'th line
+G - "Cap's"    #last-line
+dd             #delete line
+od (o=w,e,$)   #delete types
+Ctrl-v         #visual
+ny             #yank n lines
+
+./a.out < input
+./a.out > output
+./a.out < input > output
+
+*/

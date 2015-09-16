@@ -1,0 +1,110 @@
+ll prime_pow(ll a,ll p)
+{
+	if(a/p) return (a/p) + prime_pow(a/p,p);
+	return 0;
+}
+
+ll zeros(ll a)
+{
+	return prime_pow(a,5);
+}
+
+int str_mod(string s,int m)
+{
+	ll ans=0,i=0;
+	while(s[i])
+	{
+		ans*=10;
+		ans+=(s[i]-'0');
+		if(ans>=m) ans%=m;
+	};
+	return (ans);
+}
+
+int mod_pow(int a,int b,int m)
+{
+	if(b==0) return 1;
+	int t=mod_pow(a,b/2,m);
+	t*=t;
+	if(t>=m)
+		t%=m;
+	if(b&1) { t*=a;if(t>=m) t%=m;}
+	return t;
+}
+
+int mod_pow(string A,int b,int m)
+{
+	int a=str_mod(A,m);
+	return mod_pow(a,b,m);
+}
+
+template<class Int> Int GCD(Int A,Int B)
+{
+	if(A==0) return B;
+	return GCD(B%A,A);
+}
+
+template<class Int> Int LCM(Int A,Int B)
+{
+	Int Gcd=GCD(A,B);
+	return ((A*B)/(Gcd));
+}
+
+template<class Int> Int euler_gcd(Int a, Int b, Int *x, Int *y)
+{
+	if (a == 0) { *x = 0, *y = 1; return b; }
+	int x1, y1;
+	int gcd = euler_gcd(b%a, a, &x1, &y1);
+	*x = y1 - (b/a) * x1; *y = x1;
+	return gcd;
+}
+
+void inverseEuler(int a, int m)
+{
+	int x, y;
+	int g = euler_gcd(a, m, &x, &y);
+	int res = (x%m + m) % m;
+}
+int fermat(int a,int b,int m)
+{
+	a%=m;
+	b%=(m-1);
+	return mod_pow(a,b,m);
+}
+
+int fermat(string A,int b,int m)
+{
+	int a=str_mod(A,m);
+	b%=(m-1);
+	return mod_pow(a,b,m);
+}
+
+int fermat(int a,string B,int m)
+{
+	int b=str_mod(B,m-1);
+	a%=m;
+	return mod_pow(a,b,m);
+}
+
+int fermat(string A,string B,int m)
+{
+	int a=str_mod(A,m);
+	int b=str_mod(B,m-1);
+	return mod_pow(a,b,m);
+}
+
+int inverseFermat(int a,int m)
+{
+	return mod_pow((a%m),m-2,m);
+}
+
+int inverseFermat(string A,int m)
+{
+	int a=str_mod(A,m);
+	return mod_pow(a,m-2,m);
+}
+
+ld msqrt(int a,int p)
+{
+	return mod_pow(a,(p-1)/2,p);
+}
