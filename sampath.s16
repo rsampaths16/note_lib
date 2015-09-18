@@ -9,7 +9,6 @@
 using namespace std;
 
 #define ONLINE
-//#define ONLINE
 #ifndef ONLINE
 	#define TRACE
 	#define DEBUG
@@ -76,9 +75,9 @@ typedef ostringstream oss;
 #define ln length()
 #define ff first
 #define ss second
-#define pb push_back //pop_back
-#define mp make_pair
+#define pb push_back
 #define pp pop_back
+#define mp make_pair
 
 // loops
 // int
@@ -93,7 +92,6 @@ typedef ostringstream oss;
 #define rrep(i,z) for(int i=((z.sz)-1);i>=0;i--)
 
 // special
-#define fill(a)     memset(a,0,sizeof(a));
 #define mset(a,val) memset(a,val,sizeof(a))
 #define mcpy(a,b)   memcpy(a,b,sizeof(a))
 #define mcmp(a,b)   memcmp(a,b,sizeof(a))
@@ -107,8 +105,8 @@ template<class T> void unq(T &A){ A.resize(unique(all(sort(all(A))))-A.begin());
 
 // Constant's
 // 2PI-D' = 360-R'
-const int Inf = 1<<29;  // const int INF = 0x3f3f3f3f;
-const ll Inff = ll(1)<<60;
+const int Inf = 0x3f3f3f3f;
+const ll Inff = 0x3f3f3f3f3f3f3f3fLL;
 const int MAX = ll(10e+7);  // const int MAX=1000000007;
 const ld  ESP = ld(1e-9);
 const ld PI=ld(3.1415926535897932384626); // M_PI
