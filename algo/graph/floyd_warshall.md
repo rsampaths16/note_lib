@@ -1,7 +1,7 @@
 #FLOYD WARSHALL ALGORITHM
 ##COMPLEXITY :- O(v^3)
 
-1. ALL PAIRS SHORTEST-PATH
+### ALL PAIRS SHORTEST-PATH
 	Input Weight-matrix 'w'\.
 	if\(\(u,v\)\!=set\(E\)\) w\[u\]\[v\]=Inf,w\[i\]\[i\] = 0\.
 	Input parent matrix 'pa'\.
@@ -11,7 +11,7 @@
 	Output path matrix pa for path's
 	where pa\[i\]\[j\] is the predecessor of 'j' on path \(i~j\)\.
 
-2. TRANSITIVE CLOSURE
+### TRANSITIVE CLOSURE
 	Input boolean matrix of relation R\.
 	Output Transitive closure R\+ of relation\.
 	function is w\[i\]\[j\] = w\[i\]\[j\] || \(w\[i\]\[k\] && w\[k\]\[j\]\)\.
