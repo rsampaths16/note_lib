@@ -1,7 +1,7 @@
 #DIJKSTRA'S ALGORITHM
 ##COMPLEXITY :- O(v^2 + e) || O(v^2)
 
-* SINGLE SOURCE SHORTEST PATH
+1. SINGLE SOURCE SHORTEST PATH
 >	Input Weight\-matrix w, w\[u\]\[v\]=Inf is there is no edge\(u,v\)\.
 >	Input parent vector pa with initlized with 0\.
 >	Output shortest distance dist from source\.
