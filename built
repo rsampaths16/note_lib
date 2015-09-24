@@ -1,0 +1,41 @@
+__attribute__((packed))
+//struct name __attribute__((packed))
+// { a,b,c,d };
+// sizeof(name) = sum(sizeof(a,b,c,d))
+
+int __builtin_types_compatible_p (type1, type2)
+	// type1==type2 -> 1 // type1!=type2 -> 0
+
+__LINE__
+	// macro returns the line number
+
+__FUNCTION__
+	 // macro returns the function name
+
+__FILE__
+	// macro returns the file name
+
+int __builtin_ffs (int x)
+	// Returns one plus the index of the least significant 1-bit of x, or if x is zero, returns zero.
+
+int __builtin_clz (unsigned int x)
+	// Returns the number of leading 0-bits in x, starting at the most significant bit position. If x is 0, the result is undefined.
+
+int __builtin_ctz (unsigned int x)
+	// Returns the number of trailing 0-bits in x, starting at the least significant bit position. If x is 0, the result is undefined.
+
+int __builtin_clrsb (int x)
+	Returns the number of leading redundant sign bits in x, i.e. the number of bits following the most significant bit that are identical to it. There are no special cases for 0 or other values.
+int __builtin_popcount (unsigned int x)
+	Returns the number of 1-bits in x.
+int __builtin_parity (unsigned int x)
+	Returns the parity of x, i.e. the number of 1-bits in x modulo 2.
+#for above
+#func - > int
+#funcl  -> long
+#funcll -> long long
+
+uint@@_t __builtin_bswap@@ (uint@@_t x)
+// Order of bytes (8-bits) reversed
+// E.g. 11110000_10101010 -> 10101010_11110000
+// @@ -> 16,32,64

@@ -1,0 +1,21 @@
+
+typedef vector <int> vi;
+typedef vector<vi> vvi;
+typedef vector <ll> vll;
+typedef vector<vll> vvll;
+typedef vector <vector<bool> > vvb;
+
+typedef vector <string> vs;
+
+typedef pair< int ,int > pii;
+typedef map<string,int> msi;
+typedef map<int,string> mis;
+typedef map<int,int> mii;
+typedef map<ll,ll> mll;
+
+typedef istringstream iss;
+typedef ostringstream oss;
+
+typedef long long i64;
+typedef vector<i64> vi64;
+typedef vector<vi64> vvi64;

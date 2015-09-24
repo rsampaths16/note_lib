@@ -42,11 +42,10 @@ using namespace std;
 	#define debug(x)
 #endif
 
-typedef long long ll;
+typedef int64_t ll;
 typedef long double ld;
 typedef istringstream iss;
 typedef ostringstream oss;
-typedef pair<int,int> pii;
 
 // My Macros
 
@@ -60,25 +59,23 @@ typedef pair<int,int> pii;
 // num i/o
 #define si(n) scanf("%d",&n)
 #define pi(n) printf("%d",n)
-#define sl(n) scanf("%lld",&n)
-#define pl(n) printf("%lld",n)
+#define sl(n) scanf("%I64d",&n)
+#define pl(n) printf("%I64d",n)
 #define sd(n) scanf("%Lf",&n)
 #define pd(n) printf("%Lf",n)
 
 // char i/o
-#define gc(n) n=getchar()
+#define gc(n) n=getchar();{char left_overs_of_getchar=getchar();}
 #define pc(n) putchar(n)
 #define gs(n) scanf("%s",n)
 #define ps(n) print("%s",n)
-#define gcc(n) n=getchar_unlocked()
-#define pcc(n) puchar_unlocked(n)
 
 // Access
 #define sz size()
 #define ln length()
 #define ff first
 #define ss second
-#define pb push_back //pop_back
+#define pb push_back
 #define pp pop_back
 #define mp make_pair
 
@@ -110,7 +107,7 @@ template<class T> void unq(T &A){ A.resize(unique(all(sort(all(A))))-A.begin());
 // 2PI-D' = 360-R'
 const int Inf = 0x3f3f3f3f;
 const ll Inff = 0x3f3f3f3f3f3f3f3fLL;
-const int MAX = ll(1e9+7);  // const int MAX=1000000007;
+const int MAX = ll(10e+7);  // const int MAX=1000000007;
 const ld  ESP = ld(1e-9);
 const ld PI=ld(3.1415926535897932384626); // M_PI
 const int dx[]={-1,0,1,0};

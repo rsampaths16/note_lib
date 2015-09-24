@@ -1,0 +1,118 @@
+/*
+	Coder	: R Sampath Sukesh.
+	Handle	: rsampaths16.
+	Email	: rsampaths16@gmail.com.
+	Country	: India.
+*/
+
+$$	Some Notation's
+##	start -> starting address
+##	end -> ending address :: [ (last+1)'th address ]
+##	n_elements -> number of elements
+
+/*
+// lib help
+
+#include <vector>
+
+#include <queue>
+
+#include <map>
+
+#include <set>
+
+#include <bitset>
+
+#include <list>
+
+#include <stack>
+
+#include <string>
+
+#include <iostream>
+
+#include <sstream>
+~~>	for string I/O
+->	istringstream >> | ostringstream <<
+
+#include <iomanip>
+~~>	I/O manipulation flag's
+->	setbase - cout << setbase (16); cout << 100 << endl; Prints 64
+->	setfill -   cout << setfill ('x') << setw (5); cout << 77 << endl; prints xxx77
+->	setprecision - cout << setprecision(8) << f << endl; Prints x.xxxx----
+->	setprecision - cout << setprecision(8) <<fixed() << f <<endl; Prints x.xxxx0000
+
+#include <cstdio>
+~~>	String I/O
+->	sprintf(char* str,printf);
+->	sscanf(char* str,scanf);
+
+#include <cstdlib>
+
+#include <cmath>
+
+#include <cstring>
+~~>	byte memory manipulation Byte by Byte.
+->	memset(Type* A,char value,sizeof(A));
+->	memcmp(Type* A,Type* B,sizeof(A)); // B = A
+->	memcmp(Type* A,Type* B,sizeof(A)); // A==B -> (0) , A<B -> (<0) , A>B -> (>0)
+
+#include <cctype>
+
+#include <ctime>
+
+#include <utility>
+~~>	Pair ( 2-Tuple ~ (a,b) )
+->	pair<Type_1,Type_2> PAIR;
+->	PAIR = make_pair(Type_1_val,Type_2_val);
+->	PAIR.first , PAIR.second;
+->	PAIR(Type_1_val,Type_2_val);
+
+#include <algorithm>
+~~>	Assignment;
+->	fill(Type* start,Type* end,Type value);
+->	fill_n(Type* start,count n_elements,const Type value);
+->	generate(Type* start,Type* end,Type function() );
+->	generate_n(Type* start,count n_elements,const Type value);
+
+#include <limits>
+
+#include <functional>
+
+*/
+
+/*
+terminal
+
+vi  ~/.exrc
+:set autoindent
+:set tabstop=4
+:set number #show line number's
+:set autoread #change buffer if changed outside
+:set nowrap #wrap turns off
+:set wrapscan #search's wraping text
+
+
+:%s/old/new    #replace once
+:%s/old/new/g  #replace all
+:%s/old/new/gc #relpace one-by-one by confirming
+/search-string #search string
+Ctrl+n         #Fwd
+Ctrl+N         #Bwd
+w              #word
+e              #end-word
+^              #line-start
+$              #line-end
+gg             #first-line
+n gg           #n'th line
+G - "Cap's"    #last-line
+dd             #delete line
+od (o=w,e,$)   #delete types
+Ctrl-v         #visual
+ny             #yank n lines
+
+./a.out < input
+./a.out > output
+./a.out < input > output
+
+*/

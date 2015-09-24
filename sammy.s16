@@ -1,0 +1,7 @@
+#include "~/repo/sampath.s16"
+#include "~/repo/sam.bits"
+#include "~/repo/sam.fastio"
+#include "~/repo/sam.math"
+#include "~/repo/sam.NT"
+#include "~/repo/sam.utility"
+#include "~/repo/sammy.r16"
