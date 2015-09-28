@@ -4,6 +4,8 @@
 	Email	: rsampaths16@gmail.com.
 	Country	: India.
 */
+
+
 #pragma comment(linker, "/STACK:36777216")
 #include<bits/stdc++.h>
 using namespace std;
@@ -33,10 +35,12 @@ using namespace std;
 #endif
 
 #ifdef DEBUG
+	#define pause system("sleep 0.5s")
 	#define putx(x) x
 	#define msg(MSG) cerr <<__FUNCTION__<<" : msg :- "<< MSG <<endl
 	#define debug(x) cerr << '>' << #x << ':' << x << endl
 #else
+	#define pause
 	#define putx(x)
 	#define msg(MSG)
 	#define debug(x)
@@ -104,7 +108,7 @@ typedef pair<int,int> pii;
 #define ers(A, P) A.erase(A.begin() + P)
 #define lbnd(A, x) (lower_bound(all(A), x) - A.begin())
 #define is_in(T, x) (T.find(x) != T.end())
-template<class T> void unq(T &A){ A.resize(unique(all(sort(all(A))))-A.begin());}
+template<class T> void unq(T &A){ sort(all(A));A.resize(unique(all(A))-A.begin());}
 
 // Constant's
 // 2PI-D' = 360-R'
@@ -120,3 +124,9 @@ const int dy[]={0,1,0,-1};
 #define imin numeric_limits<int>::min()
 #define lmax numeric_limits<ll>::max()
 #define lmin numeric_limits<ll>::min()
+
+/*==================!!-Code-Starts-From-Here-!!==================*/
+
+
+
+/*=======================!!-End-Of-Code-!!=======================*/
