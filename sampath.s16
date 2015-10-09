@@ -73,7 +73,7 @@ typedef pair<int,int> pii;
 #define gc(n) n=getchar()
 #define pc(n) putchar(n)
 #define gs(n) scanf("%s",n)
-#define ps(n) print("%s",n)
+#define ps(n) printf("%s",n)
 #define gcc(n) n=getchar_unlocked()
 #define pcc(n) puchar_unlocked(n)
 
