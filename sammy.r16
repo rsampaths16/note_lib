@@ -9,27 +9,127 @@ $$	Some Notation's
 ##	start -> starting address
 ##	end -> ending address :: [ (last+1)'th address ]
 ##	n_elements -> number of elements
+##	U_Pred <==> Uninary Predicate -> bool func(Type val) { return bool; }
+	// Or U_Pred -> [](Type val) { return bool; }
 
 /*
 // lib help
+#include <array>
+->	array<Type,n_elements> var;
+->	front,back;
+->	iterator;
+->	size()
 
 #include <vector>
-
-#include <queue>
+->	vector<Type> val;
+->	iterator.
+->	size();reserve(x);empty();resize(x);
+->	[];at(x);front();back();
+->	push_back(x);pop_back();
+->	insert(iter pos,const Type val);
+->	erase(iter pos);
+->	erase( pos_start,pos_end );
+->	clear();
 
 #include <map>
+~~>	map
+->	map<key,val> var;
+->	map<key,val,class cmp> var;
+->	var[key]=val;
+->	insert(pair<key,val>(key,val);
+->	erase(iter pos);
+->	erase( pos_start,pos_end );
+->	clear();
+->	first;second;
+->	empty();size();
+->	[key];
+->	count(key); // count elements with key [key]; count > 0 if element exist's
+->	algorithm->Special.
+->	iterator.
+~~>	multimap same as map
+	and no [] operator.
+
 
 #include <set>
+//	same as map but no [] operator
+~~>	Set 
+->	set<Type> var;
+->	set<Type,class cmp> var;
+~~>	Multi Set
+->	multiset<Type> var;
+->	multiset<Type,class cmp> var;
 
 #include <bitset>
+->	bitset<size> var(number/string);
+->	count(); // count set bits
+->	all(); // true if all bits are '1'
+->	any(); // true if atleast one bit is set
+->	none(); // no bit is set
+->	size();
+->	reset(x); // x'th bit is set to 0
+->	reset(); // all bit's are set to 0
+->	set(x); // x'th bit is set to 1
+->	set(); // all bit's are set to 1
+->	flip(x) // x'th bit is flip
+->	flip() // all bits are fliped
+->	to_string;to_ulong;to_ullong;
+-> 	all bit_wise operation's can be used
 
 #include <list>
+->	list<Type> var;
+->	size();resize();empty();
+->	front();back();
+->	push_back();push_front();pop_back();pop_front();
+->	insert(iter pos,Type value); // [1,*2,3]+4 => [1,4,*2,3]+5 => [1,4,5,*2,3]
+->	erase(iter pos);
+->	erase( pos_start,pos_end );
+->	clear();
+->	iterator;
 
 #include <stack>
+->	stack<Type> var;
+->	top();push();pop();
+->	empty();size();
+
+#include <queue>
+~~>	queue
+->	queue<Type> var;
+->	size();empty();front();back();push();pop();
+~~>	Priority Queue
+->	priority_queue<Type,vector<Type>,class cmp> var; // bool operator ()
+->	top();push();pop();
+
+
+#include <deque>
+->	deque<Type> var;
+->	size();resize();empty();
+->	[];front();back();
+->	push_back();push_front();pop_back();pop_front();
+->	insert(iter pos,Type value);
+->	erase(iter pos);
+->	erase( pos_start,pos_end );
+->	clear();
+->	iterator;
+
+
 
 #include <string>
+->	val stoi,stol,stoul,stoll,stoull,stof,stod,stold;
+->	to_string(val);
+->	iterator;
+
+#include <tuple>
+->	tuple<Type_1,Type_2,......Type_n> var;
+->	tuple<Type_1,Type_2,......Type_n> var(Type_1 val,Type_2 val,....);
+->	Type_i get<i-1>(var); // return i'th value in tuple; 'i' is constant
+
+#include <iterator>
+->	class::iterator it;
+->	class::reverse_iterator rit;
+->	class.begin();class.rbegin();class.end();class.rend();
 
 #include <iostream>
+->	cin;cout;cerr;clog;endl;
 
 #include <sstream>
 ~~>	for string I/O
@@ -44,42 +144,148 @@ $$	Some Notation's
 
 #include <cstdio>
 ~~>	String I/O
-->	sprintf(char* str,printf);
-->	sscanf(char* str,scanf);
+->	printf( char* control_string,args );
+->	scanf( char* control_string,args );
+->	sprintf( char* str_buffer,char* control_string,args );
+->	sscanf( char* str_buffer,char* control_string,args );
+->	putchar(char);
 
 #include <cstdlib>
+~~> String to value's
+// [f,float],[i,int],[d,double],[l,long],[u,unsigned]
+->	atof,atoi,atol,atoll,strtod,strtof,strtol,strtold,strtoll,strtoul,strtoull;
+->	system(char *command);
+->	bsearch(Type* key,start,n_elements,sizeof(Type),cmp );
+	// cmp(a,b) (a<b,-1),(a==b,0),(a>b,1);
+->	abs,labs,llabs,fabs;
 
 #include <cmath>
+~~>	Trignometric [[360'Deg]==[2PI'Rad]] ; 1'Rad = (PI/180)'Deg
+->	double cos(@) ; sin(@) ; tan(@) ; parameter '@' is in radian's
+->	@ = double acos(val) ; asin(val) ; atan(val) ; // return's ans in radian's
+->	@ = double atan2( Y,X ); // result is valarray<double> if X and Y are valarray.
+
+~~>	Power's and log's
+->	double exp(x); // e^(x)
+->	double pow(x,y); // x^y
+->	double sqrt(x); cbrt(x);
+->	double hypot(x,y); // sqrt((x^2)+(y^2));
+->	double log(x) // Base-e
+->	double log10(x) // Base-10
+->	double log2(x) // Base-2
+->	int ceil(x); floor(x); round(x);
+
 
 #include <cstring>
 ~~>	byte memory manipulation Byte by Byte.
-->	memset(Type* A,char value,sizeof(A));
-->	memcmp(Type* A,Type* B,sizeof(A)); // B = A
-->	memcmp(Type* A,Type* B,sizeof(A)); // A==B -> (0) , A<B -> (<0) , A>B -> (>0)
+->	memset( Type* A,char value,sizeof(A) );
+->	memcmp( Type* A,Type* B,sizeof(A) ); // B = A
+->	memcmp( Type* A,Type* B,sizeof(A) ); // A==B -> (0),A<B -> (<0),A>B -> (>0)
 
 #include <cctype>
-
-#include <ctime>
+~~>	check charecter type's
+->	bool isalpha(char x)
+->	bool isdigit(char x)
+->	bool isxdigit(char x) // is hexadecimal diigit.
+->	bool isalnum(char x) // is either alphabet or digit.
+->	bool isupper(char x)
+->	bool islower(char x)
+->	char tolower(char x)
+->	char toupper(char x)
 
 #include <utility>
-~~>	Pair ( 2-Tuple ~ (a,b) )
+~~>	Pair ( 2-Tuple ~ (a,b) ).
 ->	pair<Type_1,Type_2> PAIR;
-->	PAIR = make_pair(Type_1_val,Type_2_val);
-->	PAIR.first , PAIR.second;
-->	PAIR(Type_1_val,Type_2_val);
+->	PAIR = make_pair( Type_1_val,Type_2_val );
+->	PAIR.first,PAIR.second;
+->	PAIR( Type_1_val,Type_2_val );
+->	pair<Type_1,Type_2> PAIR(piecewise_construct,forward_as_tuple(Type_1 constructor),<--
+		-->forward_as_tuple(Type_2 constructor));
 
 #include <algorithm>
-~~>	Assignment;
-->	fill(Type* start,Type* end,Type value);
-->	fill_n(Type* start,count n_elements,const Type value);
-->	generate(Type* start,Type* end,Type function() );
-->	generate_n(Type* start,count n_elements,const Type value);
+
+~~>	Assignment.
+->	fill( start,end,const Type value );
+->	fill_n( start,n_elements,const Type value );
+->	generate( start,end,Type function() );
+->	generate_n( start,n_elements,Type function() );
+
+~~>	Remove.
+->	iter new_end = remove( start,end,const Type value );
+		// Return's the end of the modified list, Only list change's not it's size
+		// { [1,1,2,2,3,2) } - {2} => { [1,1,3) ,2,3,2 } 
+->	iter new_end = remove( start,end,bool U_Pred ); // all True's are removed
+->	iter new_end = remove_copy( start,end,new_start,const Type val );
+->	iter new_end = remove_copy_if(	start, end,new_start,bool U_Pred );
+
+~~>	Unique.
+->	iter new_end = unique( start,end); // remove's similar continous elements
+->	iter new_end = unique( start, end,bool cmp_equal ); // (return a==b)
+->	iter new_end = unique_copy( start,end,new_start );
+->	iter new_end = unique_copy( start,end,new_start,bool cmp_equal);
+
+~~> Reverse.
+->	reverse( start,end ); // [1,2,3,4] => [4,3,2,1]
+->	iter new_end = reverse_copy( start,end,new_start);
+
+~~>	Swap.
+->	swap(Type a,Type b);// Type => any_object. e.g: int,bool,vector,map,set......etc.
+->	swap_ranges( A_start,A_end,B_start );
+	// A {1,[2,3,4),5} <==> B{4,4,[5,2,2)} => A{1,5,2,2,5},B{4,4,2,3,4}; 
+
+~~>	Rotate.
+->	rotate( start,next_start,end ); // {1,2,3,[4],5} => {4,5,1,2,3}
+->	iter new_end = rotate_copy( start,next_start,end,new_start );
+
+~~>	Partition.
+->	bool is_partitioned( start,end,bool U_Pred );
+->	iter part_point = partition( start, end,bool U_Pred ); // [1,2,3,4] => [1,3,(*)2,4]
+->	iter part_point = stable_partition( start,end,bool U_Pred ); // no change in order
+->	iter part_point = partition_point( start,end,bool U_Pred ); // partition point
+
+~~>	General.
+->	iter pos = find( start,end,val ); // pos==end if val is not in range
+->	iter pos = find_if( start,end,bool U_Pred ); // first val satisfying U_Pred
+->	iter pos = find_if_not( start,end,bool U_Pred ); // first val not satisfying U_Pred
+->	iter pos = find_end( start,end,sub_start,sub_end ); // last occurrence of sub_seq in seq
+->	iter pos = find_first_of( start,end,sub_start,sub_end ); // first occurrence
+->	bool is_permutation( A_start,A_end,B_start );
+->	bool is_permutation( A_start,A_end,B_start,bool U_Pred );
+->	bool next_permutation( start,end ); // Permuit's the next lexographical larger permutation
+->	bool next_permutation( start,end,bool cmp(<) ); // returns flase if not possible
+->	bool prev_permutation( start,end ); // same as next_perm but smaller permutation
+->	bool prev_permutation( start,end,bool cmp(<) );
+->	sort( start,end );
+->	sort( start,end,bool cmp );
+
+~~>	Special. // Requires Sorted elements.
+->	iter pos = lower_bound( start,end,const Type val ); // first occurrence of val
+->	iter pos = lower_bound( start,end,const Type val,bool cmp );
+->	iter pos = upper_bound( start,end,const Type val ); // pointer to element next to 
+->	iter pos = upper_bound( start,end,const Type val,bool cmp ); // last occurrence of val
+->	pair<l_bnd,u_bnd> = equal_range( start,end,const Type val ); // range of value's equal to val
+->	pair<l_bnd,u_bnd> = equal_range( start,end,const Type val,bool cmp );
+->	bool binary_search(	start,end,const Type val );
+->	bool binary_search(	start,end,const Type val,bool cmp );
+
+~~> MIN/MAX.
+->	Type min(a,b);min_element( start,end );
+->	Type max(a,b);max_element( start,end );
+->	pair<Type min,Type max> minmax(a,b);minmax_element( start,end );
+
 
 #include <limits>
-
-#include <functional>
+->	numeric_limits<Type>::min(),max();
 
 */
+
+
+$$	Utility's For Macro's
+##	__FUNCTION__
+##	__LINE__
+## __typeof(Type value/variable)
+
+
 
 /*
 terminal

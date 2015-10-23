@@ -56,7 +56,7 @@ typedef pair<int,int> pii;
 
 // I/O
 // special i/o
-#define fast() std::ios::sync_with_stdio(false)
+#define fast() ios::sync_with_stdio(false)
 #define pw putchar(' ')
 #define pn putchar('\n')
 #define dg(s,i) printf("%s %d",s,i)
@@ -111,7 +111,7 @@ typedef pair<int,int> pii;
 template<class T> void unq(T &A){ sort(all(A));A.resize(unique(all(A))-A.begin());}
 
 // Constant's
-// 2PI-D' = 360-R'
+// [[360`Deg]==[2PI`Rad]]
 const int Inf = 0x3f3f3f3f;
 const ll Inff = 0x3f3f3f3f3f3f3f3fLL;
 const int MAX = ll(1e9+7);  // const int MAX=1000000007;
