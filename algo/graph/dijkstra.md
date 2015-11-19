@@ -18,9 +18,9 @@ vector<int> adj[MX]
 
 class cmp
 {
-	bool operator () const (pii& v1,pii& v2)
+	bool operator () const (pair<int,int>& v1,pair<int,int>& v2)
 	{
-		return (v1.ss > v2.ss);
+		return (v1.second > v2.second);
 	}
 };
 
@@ -33,22 +33,22 @@ void dijkstra(int source,int size)
 	pa[source]=0; 
 
 	priority_queue<int,vector<int>,cmp> Q;
-	Q.push(mp(source,0));
+	Q.push(make_pair(source,0));
 
 	while(!Q.empty())
 	{
-		int u=Q.top().ff;
+		int u=Q.top().first;
 		Q.pop();
 		if(vst[u]) continue;
 		//use if(u==target) return dist[target]; for early return
-		rep(i,adj[u])
+		for(int i=0;i<adj[u].size();i++)
 		{
 			int v=adj[u][i];
 			if( dist[u] + w[u][v] < dist[v])
 			{
 				dist[v]=dist[u]+w[u][v];
 				pa[v]=u;
-				Q.push(mp(v,dist[v]));
+				Q.push(make_pair(v,dist[v]));
 			}
 		}
 	}
@@ -57,10 +57,10 @@ void dijkstra(int source,int size)
 
 int print_path(int x) //  from source to v
 {
-	pi(pa[x]);pw;
+	printf("%d ",pa[x]);
 	if(pa[x]==0) // 0 is parent of source
 	{
-		pn;return;
+		putchar('\n');return;
 	}
 	print_path(pa[x]);
 	return;

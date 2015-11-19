@@ -24,11 +24,11 @@ int pa[MX][MX];
 
 void floyd_warshall(int size)
 {
-	FOR(k,1,size)
+	for(int k=1;k<=size;k++)
 	{
-		FOR(i,1,size)
+		for(int i=1;i<=size;i++)
 		{
-			FOR(j,1,size)
+			for(int j=1;j<=size;j++)
 			{
 				if(w[i][k] + w[k][j] < w[i][j])
 				{
@@ -45,10 +45,10 @@ void print_path(int i,int j)
 {
 	if(i==j)
 	{
-		pi(i);pn;
+		printf("%d\n",i);
 		return;
 	}
-	pi(pa[i][j]);pw;
+	printf("%d ",pa[i][j]);
 	print_path(i,pa[i][j]);
 	return;
 }
