@@ -1,20 +1,35 @@
 #include<iostream>
 #include<fstream>
+#include<ctime>
+#include<cstdio>
+const std::string currentDateTime() 
+{
+	time_t     now = time(0);
+	struct tm  tstruct;
+	char       buf[80];
+	tstruct = *localtime(&now);
+	strftime(buf, sizeof(buf), "%d-%m-%Y.%X", &tstruct);
+	return buf;
+}
 using namespace std;
 void cpy(char out[])
 {
-	ifstream ob("/home/sampath/repo/note_lib/sampath.s16");
-	ofstream o(out);
-	char ch;
-//	printf("%s\n",out);
-	while(ob.eof()==0)
-	{
-		ob.get(ch);
-		o.put(ch);
-//		cout << ch;
-	}
-	o.close();
-	ob.close();
+	ofstream fout(out);
+	fout << "/*" << endl;
+	fout << "\tCoder\t: R Sampath Sukesh." << endl;
+	fout << "\tHandle\t: rsampaths16." << endl;
+	fout << "\tEmail\t: rsampaths16@gamil.com." << endl;
+	fout << "\tCountry\t: India." << endl;
+	fout << "\tTStamp\t: " << currentDateTime() << endl;
+	fout << "*/" << endl << endl << endl;
+	fout << "#pragma comment(linker, \"/STACK:36777216\")" << endl;
+	fout << "#include<bits/stdc++.h>" << endl;
+	fout << "using namespace std;" << endl;
+	fout << "typedef long long ll;" << endl << endl << endl;
+	fout << "/*==================!!-Code-Starts-From-Here-!!==================*/" << endl << endl << endl;
+	fout << "/*=======================!!-End-Of-Code-!!=======================*/" << endl;
+
+	fout.close();
 	return;
 }
 
