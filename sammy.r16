@@ -127,6 +127,9 @@ $$	Some Notation's
 ->	class::iterator it;
 ->	class::reverse_iterator rit;
 ->	class.begin();class.rbegin();class.end();class.rend();
+->	it = class.next(it); \\ Iterator to next element in class
+->	it = class.prev(it); \\ Iterator to prev element in class
+
 
 #include <iostream>
 ->	cin;cout;cerr;clog;endl;
