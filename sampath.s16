@@ -10,8 +10,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define ONLINE
-#ifndef ONLINE
+#define ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
 	#define TRACE
 	#define DEBUG
 #endif

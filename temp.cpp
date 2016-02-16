@@ -26,8 +26,8 @@ void cpy(char out[])
 	fout << "#include<bits/stdc++.h>" << endl;
 	fout << "using namespace std;" << endl;
 	fout << "typedef long long ll;" << endl << endl << endl;
-	fout << "#define ONLINE" << endl;
-	fout << "#ifndef ONLINE" << endl;
+	fout << "#define ONLINE_JUDGE" << endl;
+	fout << "#ifndef ONLINE_JUDGE" << endl;
 	fout << "\t#define TRACE" << endl;
 	fout << "\t#define DEBUG" << endl;
 	fout << "#endif" << endl<<endl;
